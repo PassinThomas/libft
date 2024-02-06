@@ -32,6 +32,7 @@ ft_strmapi \
 ft_strtrim \
 ft_split \
 ft_itoa \
+get_next_line \
 
 SRCS 	= $(addsuffix .c, ${SRC})
 
@@ -60,7 +61,7 @@ NAME = libft.a
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-				${AR} ${NAME} ${OBJS}		
+				${AR} ${NAME} ${OBJS}
 
 %o :%c
 		${CC} ${CFLAGS} -c $< -o $@

@@ -3,18 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <tpassin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 23:02:06 by tpassin           #+#    #+#             */
-/*   Updated: 2023/11/27 18:09:18 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/02 12:46:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <fcntl.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
@@ -65,4 +72,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+char		*get_next_line(int fd);
 #endif

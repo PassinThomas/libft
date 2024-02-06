@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpassin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 20:06:39 by tpassin           #+#    #+#             */
-/*   Updated: 2023/11/27 14:25:12 by tpassin          ###   ########.fr       */
+/*   Updated: 2024/02/02 13:05:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static char	**split_logic(char const *s, char c, char **strs)
 		}
 	}
 	strs[k] = (NULL);
-	return (strs);
+	return (free(s), strs);
 }
 
 char	**ft_split(char const *s, char c)
